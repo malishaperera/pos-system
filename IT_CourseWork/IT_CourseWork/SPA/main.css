@@ -1,0 +1,394 @@
+
+
+/* General body styles */
+body {
+  background-color: #a8f7ea;
+  font-family: system-ui;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  scroll-behavior: smooth;
+}
+
+
+.navbar {
+  position: sticky;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #1C1F25;
+  padding: 10px 20px;
+  margin: 0;
+  
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px; 
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+/* .navbar a.active {
+  background-color: #E8BC0E;
+} */
+
+.navbar a:hover {
+  /* background-color: #454A52; */
+  background-color: #E8BC0E;
+}
+
+
+/* Container styles */
+.container {
+  width: 1000px;
+  margin: auto;
+  transition: 0.5s;
+}
+
+/* Header styles */
+header {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  margin-top: 50px;
+}
+
+/* Shopping cart icon styles */
+header .shopping {
+  position: relative;
+  text-align: right;
+}
+header .shopping img {
+  width: 40px;
+}
+header .shopping span {
+  background: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: absolute;
+  top: -5px;
+  left: 80%;
+  padding: 3px 10px;
+}
+
+/* Product list styles */
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  margin-top: 50px;
+}
+.list .item {
+  text-align: center;
+  background-color: #DCE0E1;
+  padding: 20px;
+  box-shadow: 0 50px 50px #757676;
+  letter-spacing: 1px;
+}
+.list .item img {
+  width: 90%;
+  height: 430px;
+  object-fit: cover;
+}
+.list .item .title {
+  font-weight: 600;
+}
+.list .item .price {
+  margin: 10px;
+}
+.list .item button {
+  background-color: #1C1F25;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Shopping cart panel styles */
+.card {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 500px;
+  background-color: #453E3B;
+  height: 100vh;
+  transition: 0.5s;
+}
+
+.active .card {
+  left: calc(100% - 500px);
+}
+.active .container {
+  transform: translateX(-200px);
+}
+.card h1 {
+  color: #E8BC0E;
+  font-weight: 100;
+  margin: 0;
+  padding: 0 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.card .checkOut {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.card .checkOut div {
+  background-color: #E8BC0E;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.card .checkOut div:nth-child(odd) {
+  background-color: #1C1F25;
+  color: #fff;
+}
+.card .checkOut div span {
+  margin-left: 5px;
+}
+
+/* Cart item list styles */
+.listCard li {
+  display: grid;
+  grid-template-columns: 100px repeat(3, 1fr);
+  color: #fff;
+  row-gap: 10px;
+}
+.listCard li div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listCard li img {
+  width: 90%;
+}
+.listCard li button {
+  background-color: #fff5;
+  border: none;
+}
+.listCard .count {
+  margin: 0 10px;
+}
+
+/* Styles for managing customers section */
+.manage-customers {
+  margin-top: 50px;
+}
+.manage-customers h2 {
+  text-align: center;
+}
+.manage-customers input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+}
+.manage-customers button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  background-color: #1C1F25;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.manage-customers table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+.manage-customers table,
+.manage-customers th,
+.manage-customers td {
+  border: 1px solid black;
+}
+.manage-customers th,
+.manage-customers td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Styles for viewing orders section */
+.view-orders {
+  margin-top: 50px;
+}
+.view-orders h2 {
+  text-align: center;
+}
+.view-orders table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+.view-orders table,
+.view-orders th,
+.view-orders td {
+  border: 1px solid black;
+}
+.view-orders th,
+.view-orders td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Styles for viewing products section */
+.view-products {
+  margin-top: 50px;
+}
+.view-products h2 {
+  text-align: center;
+}
+.view-products table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+.view-products table,
+.view-products th,
+.view-products td {
+  border: 1px solid black;
+}
+.view-products th,
+.view-products td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Styles for adding new product section */
+.add-product {
+  margin-top: 50px;
+}
+.add-product h2 {
+  text-align: center;
+}
+.add-product input[type="text"],
+.add-product input[type="number"],
+.add-product input[type="file"] {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+}
+.add-product button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  background-color: #1C1F25;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 900px;
+  }
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 992px) {
+  .container {
+    width: 750px;
+  }
+  .list {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    width: 100%;
+  }
+  .active .card {
+    left: 0;
+  }
+  .active .container {
+    transform: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header {
+    grid-template-columns: 1fr 40px;
+  }
+  header .shopping img {
+    width: 30px;
+  }
+  .list .item img {
+    height: 350px;
+  }
+  .card h1 {
+    padding: 0 10px;
+  }
+  .card .checkOut div {
+    height: 60px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  header {
+    grid-template-columns: 1fr 30px;
+  }
+  header .shopping img {
+    width: 25px;
+  }
+  .list .item img {
+    height: 300px;
+  }
+  .card h1 {
+    font-size: 20px;
+  }
+  .card .checkOut div {
+    height: 50px;
+    font-size: 14px;
+  }
+}
+
+/* Styles for modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.4); 
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+}
+
+/* Close button for modal */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+

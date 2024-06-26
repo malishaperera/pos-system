@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add New Product</title>
+  <link rel="stylesheet" href="/IT_CourseWork/IT_CourseWork/SPA/main.css" /> 
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <a href="#cardS">Item</a>
+    <a href="#newProdectS" class="active">NewItem</a>
+    <a href="#customerS">Customer</a>
+    <a href="#ordersS">Orders</a><br>
+  </nav>
+
+  <div class="container">
+    <!-- Header section -->
+    <header>
+      <h1>Welcome To POS</h1>
+      <!-- Shopping cart icon -->
+      <div class="shopping" onclick="toggleCart()">
+        <img src="/IT_CourseWork/IT_CourseWork/SPA/image/shopping-cart.png" alt="shopping cart" />
+        <span class="quantity">0</span> <!-- Cart item quantity -->
+      </div>
+    </header>
+
+    <!-- Container for added products -->
+    <div class="list"></div>
+
+    <!-- Shopping cart section -->
+    <section class="cardS" id="cardS">
+      <div class="card">
+        <h1>Shopping Cart</h1>
+        <!-- Dropdown to select customer -->
+        <select id="customer-select">
+          <option value="" disabled selected>Select Customer</option>
+        </select>
+        <!-- List of items in the cart -->
+        <ul class="listCard"></ul>
+        <div class="checkOut">
+          <div class="total">0</div> <!-- Total amount -->
+          <div class="placeOrder" onclick="placeOrder()">Place Order</div>
+          <div class="closeShopping" onclick="toggleCart()">Close</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section for adding and viewing products -->
+    <section class="newProdectS" id="newProdectS">
+      <!-- Form to add new product -->
+      <div class="add-product">
+        <h2>Add New Product</h2>
+        <input type="file" id="product-image" accept="image/*" /><br /><br />
+        <input type="text" id="product-name" placeholder="Product Name" /><br /><br />
+        <input type="number" id="product-price" placeholder="Product Price" /><br /><br />
+        <input type="number" id="product-quantity" placeholder="Product Quantity" /><br /><br />
+        <!-- Buttons for CRUD operations -->
+        <button onclick="addNewProduct()">Add Product</button>
+        <button onclick="updateProduct()">Update Product</button>
+        <button onclick="deleteProduct()">Delete Product</button>
+        <button onclick="clearProductFields()">Clear Fields</button>
+      </div>
+
+      <!-- Table to display products -->
+      <div class="view-products">
+        <h2>Products</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Image</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody class="product-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Modal dialog box -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="congratsMessage"></div>
+      </div>
+    </div>
+
+    <!-- Section for managing customers -->
+    <section class="customerS" id="customerS">
+      <div class="manage-customers">
+        <h2>Manage Customers</h2>
+        <!-- Form fields for managing customers -->
+        <input type="text" id="customer-name" placeholder="Customer Name" /><br /><br />
+        <input type="text" id="customer-address" placeholder="Customer Address" /><br /><br />
+        <input type="number" id="customer-salary" placeholder="Customer Salary" /><br /><br />
+        <!-- Buttons for CRUD operations -->
+        <button onclick="addCustomer()">Add Customer</button>
+        <button onclick="updateCustomer()">Update Customer</button>
+        <button onclick="deleteCustomer()">Delete Customer</button>
+        <button onclick="clearCustomerFields()">Clear Fields</button>
+        <!-- Table to display customers -->
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Salary</th>
+            </tr>
+          </thead>
+          <tbody class="customer-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section for viewing orders -->
+    <section class="ordersS" id="ordersS">
+      <div class="view-orders">
+        <h2>Orders</h2>
+        <!-- Table to display orders -->
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date</th>
+              <th>Customer ID</th>
+              <th>Customer Name</th>
+              <th>Customer Address</th>
+              <th>Item ID</th>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Discount Price</th>
+              <th>Discounted Total</th>
+            </tr>
+          </thead>
+          <tbody class="order-table"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">Top</button>
+
+  <!-- JavaScript file for dynamic behavior -->
+  <script src="/IT_CourseWork/IT_CourseWork/SPA/script.js"></script>
+</body>
+</html>
